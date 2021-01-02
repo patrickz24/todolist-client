@@ -1,8 +1,14 @@
 import apiCall from '../apiCall';
 
-export const signUp = (user) => async dispatch =>{
-    const res = await apiCall('/signup', 'post', user);
-    return dispatch({type: 'SIGNUP_USER', payload:res.data});
+export const signUp = (dispatch) => async (user)=>{
+   try { 
+    dispatch({type: 'SIGNUP_USER_LOADING'});
+       const res = await apiCall('/signup', 'post', user);
+    dispatch({type: 'SIGNUP_USER_SUCCESS', payload:res.data});
+       return res;
+   } catch (err) {
+       return dispatch({type: 'SIGNUP_USER_FAILURE', payload: err.response.data})
+   }
 };
 
 

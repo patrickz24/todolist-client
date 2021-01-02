@@ -8,8 +8,7 @@ export const Nav = styled.nav`
   background-color: black;
   .logo {
     font-family: Lora;
-  
-    font-weight: bold;
+        font-weight: bold;
     line-height: 55px;
     font-size: xx-large;
     a {
@@ -18,19 +17,20 @@ export const Nav = styled.nav`
     }
   }
   .auth-btns {
-      margin-top: -3%;
     width: 100%;
     .btn {
       float: right;
       color: #fff;
       font-weight: 600;
     }
-    .sign-in,
+    .sign-in {
+      line-height: 45px;
+    }
     .sign-up {
-      height: 4vh;
-      width: 8%;
-      background: rgba(0, 0, 0, 0.1);
-      border: 1px solid #ffffff;
+      height: 30px;
+      width: 80px;
+      background: rgba(0, 0, 0, 0.9);
+      border: 1px solid #fff;
       border-radius: 5px;
       padding: 3px;
       margin-top: 15px;

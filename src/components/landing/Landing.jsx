@@ -1,8 +1,11 @@
 import React from 'react';
-import { Main } from './Styles'
+import { Main } from './Styles';
+import NavBar from '../layouts/NavBar';
 
 const Landing = () => {
   return (
+  <>
+  <NavBar/>
     <Main>
       <div className="container-fluid d-flex justify-content-center">
         <div className="row">
@@ -12,6 +15,7 @@ const Landing = () => {
         </div>
       </div>
     </Main>
+  </>
   )
 }
 

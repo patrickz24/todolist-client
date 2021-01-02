@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Nav } from './Styles';
 import { signIn, signUp } from '../../actions';
-import { connect } from 'react-redux';
+
 
 
 const NavBar = (props) => {
@@ -28,8 +29,10 @@ await props.signUp({
           <div className="col-md-5">
             <div className="logo"><a href="/">To Do List</a></div>
           </div>
-          <div className="auth-btns ">
-            <button onClick={handleSignUp} className="btn sign-up">Sign Up</button>
+          <div className="auth-btns col-md-7">
+     <NavLink to="/signup">
+     <button  className="btn sign-up">Sign Up</button>
+     </NavLink>
             <button onClick={handleSignIn} className="btn sign-in">Sign In</button>
           </div>
         </div>
@@ -43,4 +46,4 @@ const mapStateToProps = ({ auth}) => {
   return  {...auth}
 }
 
-export default connect(mapStateToProps, {signUp, signIn})(NavBar);
+export default NavBar;
