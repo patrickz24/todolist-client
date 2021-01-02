@@ -1,0 +1,14 @@
+import axios from 'axios';
+
+const composeToken = (token) => token ? {Authorization: `Baerer ${token}` } : {};
+
+const apiCall = (url, method, body = {}, token = '') => axios({
+    method,
+    url: `http://localhost:8060/api${url}`,
+    data: body,
+    headers:{
+...composeToken(token)
+    }
+});
+
+export default apiCall;
