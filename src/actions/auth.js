@@ -11,8 +11,23 @@ export const signUp = (dispatch) => async (user)=>{
    }
 };
 
+export const setCurrentUser = (dispatch) => (Cookies, jwtDecode) => {
+try {
+    dispatch({ type: 'SET_CURRENT_USER_LOADING'});
+    const payload = jwtDecode(Cookies.get('token'));
+dispatch({ type: 'SET_CURRENT_USER', payload});   
+} catch (err) {
+    dispatch({ type: 'SET_CURRENT_USER_FAILURE', payload: err})
+}}
 
-export const signIn = (user) => async dispatch =>{
-    const res = await apiCall('/signin', 'post', user);
-    return dispatch({type: 'SIGNIN_USER', payload:res.data});
+export const signIn = (dispatch) => async (user) =>{
+    
+    try { 
+        dispatch({type: 'SIGNIN_USER_LOADING'});
+           const res = await apiCall('/signin', 'post', user);
+            dispatch({type: 'SIGNIN_USER_SUCCESS', payload:res.data});
+            return res;
+       } catch (err) {
+           return dispatch({type: 'SIGNIN_USER_FAILURE', payload: err.response.data})
+       }
 };

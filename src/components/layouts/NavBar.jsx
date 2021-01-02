@@ -1,27 +1,23 @@
-import React from 'react';
+import React, {  useContext, useEffect} from 'react';
+import Cookies from 'js-cookie';
+import jwtDecode from 'jwt-decode';
 import { NavLink } from 'react-router-dom';
 import { Nav } from './Styles';
-import { signIn, signUp } from '../../actions';
+import {Context as AuthContext } from '../../context/authContext';
 
 
 
-const NavBar = (props) => {
 
-  const handleSignUp = async () => {
-await props.signUp({
-  first_name: 'patrick',
-  last_name:'zamble-bi',
-  email: 'patrick.zamblebi37@gmail.com',
-  password: 'patrick1'
-});
-  }
+const NavBar = () => {
+const {state: { user }, setCurrentUser}= useContext(AuthContext);
 
-  const handleSignIn = async () => {
-    await props.signIn({
-      email: 'patrick.zamblebi37@gmail.com',
-      password: 'patrick1'
-    });
-      }
+useEffect(() => {
+  
+  if (Cookies.get('token')){
+  setCurrentUser(Cookies, jwtDecode)
+}
+}, []);
+    
   return (
     <Nav>
       <div className="container-fluid">
@@ -30,10 +26,22 @@ await props.signUp({
             <div className="logo"><a href="/">To Do List</a></div>
           </div>
           <div className="auth-btns col-md-7">
-     <NavLink to="/signup">
-     <button  className="btn sign-up">Sign Up</button>
-     </NavLink>
-            <button onClick={handleSignIn} className="btn sign-in">Sign In</button>
+{
+  user ? (
+    <div className="float-right mt-3">{user.first_name}   {user.last_name}</div>
+  ) :
+  (
+    <>     
+    <NavLink to="/signup">
+    <button  className="btn sign-up">Inscription</button>
+    </NavLink>
+    <NavLink to="/signin">
+    <button className="btn sign-in" >Connexion</button>
+    </NavLink>
+    </>
+  )
+}
+            
           </div>
         </div>
       </div>
