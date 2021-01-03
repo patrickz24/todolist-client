@@ -7,9 +7,10 @@ const auth = ( state = initialState, action) => {
             return {...state, user:action.payload.user, isAuthenticated:true};
             case 'SIGNUP_USER_FAILURE':
                 console.log(action.payload);
-                return {...state, signUpErr: action.payload};  
-case 'SET_CURRENT_USER_SUCESS':
-    return { ...state, user:action.payload };
+                return {...state, signUpErr: action.payload}; 
+
+case 'SET_CURRENT_USER_SUCCESS':
+    return { ...state, user:action.payload};
 
 
 

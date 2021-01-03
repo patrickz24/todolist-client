@@ -26,11 +26,9 @@ useEffect(() => {
             <div className="logo"><a href="/">To Do List</a></div>
           </div>
           <div className="auth-btns col-md-7">
-{
-  user ? (
+{user ? (
     <div className="float-right mt-3">{user.first_name}   {user.last_name}</div>
-  ) :
-  (
+  ) :  (
     <>     
     <NavLink to="/signup">
     <button  className="btn sign-up">Inscription</button>
@@ -41,6 +39,12 @@ useEffect(() => {
     </>
   )
 }
+<NavLink to="/signup">
+    <button  className="btn sign-up">Inscription</button>
+    </NavLink>
+    <NavLink to="/signin">
+    <button className="btn sign-in" >Connexion</button>
+    </NavLink>
             
           </div>
         </div>
@@ -49,9 +53,6 @@ useEffect(() => {
   )
 };
 
-const mapStateToProps = ({ auth}) => {
-  console.log(auth);
-  return  {...auth}
-}
+
 
 export default NavBar;

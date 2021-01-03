@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   color: #fff;
   background-color: black;
   .logo {
-    font-family: Lora;
+    font-family: Lora, sans-serif;
         font-weight: bold;
     line-height: 55px;
     font-size: xx-large;
@@ -28,11 +28,11 @@ export const Nav = styled.nav`
     }
     .sign-up {
       height: 30px;
-      width: 80px;
+      width: fit-content;
       background: rgba(0, 0, 0, 0.9);
       border: 1px solid #fff;
       border-radius: 5px;
-      padding: 3px;
+      padding: 3px 10px;
       margin-top: 15px;
     }
   }

@@ -11,11 +11,13 @@ export const signUp = (dispatch) => async (user)=>{
    }
 };
 
-export const setCurrentUser = (dispatch) => (Cookies, jwtDecode) => {
+export const setCurrentUser = (dispatch) => async (Cookies, jwtDecode) => {
 try {
     dispatch({ type: 'SET_CURRENT_USER_LOADING'});
     const payload = jwtDecode(Cookies.get('token'));
-dispatch({ type: 'SET_CURRENT_USER', payload});   
+    console.log(payload);
+  dispatch({ type: 'SET_CURRENT_USER_SUCCESS', payload});
+ 
 } catch (err) {
     dispatch({ type: 'SET_CURRENT_USER_FAILURE', payload: err})
 }}

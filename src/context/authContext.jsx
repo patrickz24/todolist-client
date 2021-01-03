@@ -3,7 +3,7 @@ import authReducer from '../reducers/auth';
 import {signUp, signIn, setCurrentUser} from '../actions';
 
 export const initialState = {
-    user: null,
+   
     isAuthenticated: false,
     signUpErr: '',
     signInErr: ''

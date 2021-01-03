@@ -48,7 +48,9 @@ export const TodoList = styled.div`
       background-color: #06A82A;
       border: 1px solid #06A82A;
       color: #fff;
-      width: 100px;
+      width: fit-content;
+      padding: 5px 10px;
+
     }
     .create-task {
       border: 1px solid #ccc;

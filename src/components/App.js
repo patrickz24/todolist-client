@@ -36,7 +36,8 @@ function App() {
           }} />)
         } />
 
-<Route path="/todos" render={() => (<ListTodos />)} />
+<Route path="/todos" render={() => (<ListTodos  />)
+        } />
       </Router>
     </div>
   );
