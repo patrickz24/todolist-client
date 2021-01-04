@@ -23,10 +23,10 @@ setTodoitem(e.target.value);
     const res = await createTodoItem({text : todoitem, todoId}, Cookies);
    if (res) {
      await fetchTodos(Cookies);
-
+   
    } 
    }
-   setShowCreateTodoItem(false);
+  
   } 
 
   

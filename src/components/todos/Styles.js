@@ -66,6 +66,7 @@ export const TodoList = styled.div`
       border-radius: 3px;
       padding: 1px;
       input {
+        width: 90%;
         border: none;
         padding: 5px;
         outline: none;
