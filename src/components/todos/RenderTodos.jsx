@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Cookies from 'js-cookie';
 import { Context as TodosContext } from '../../context/todosContext';
 import CreateTodoItem from './CreateTodoItem';

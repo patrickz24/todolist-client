@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   background-color: black;
   .logo {
     font-family: Lora, sans-serif;
-        font-weight: bold;
+    font-weight: bold;
     line-height: 55px;
     font-size: xx-large;
     a {

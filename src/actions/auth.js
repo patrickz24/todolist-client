@@ -15,15 +15,12 @@ export const setCurrentUser = (dispatch) => async (Cookies, jwtDecode) => {
 try {
     dispatch({ type: 'SET_CURRENT_USER_LOADING'});
     const payload = jwtDecode(Cookies.get('token'));
-
-  dispatch({ type: 'SET_CURRENT_USER_SUCCESS', payload});
- 
+  dispatch({ type: 'SET_CURRENT_USER_SUCCESS', payload}); 
 } catch (err) {
     dispatch({ type: 'SET_CURRENT_USER_FAILURE', payload: err})
 }}
 
-export const signIn = (dispatch) => async (user) =>{
-    
+export const signIn = (dispatch) => async (user) =>{    
     try { 
         dispatch({type: 'SIGNIN_USER_LOADING'});
            const res = await apiCall('/signin', 'post', user);

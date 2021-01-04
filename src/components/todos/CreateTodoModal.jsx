@@ -19,7 +19,6 @@ useEffect(() => {
     {
         props.closeModal();
     }
-
     }
 
     const handleChange = (e) => {
@@ -29,17 +28,11 @@ useEffect(() => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); 
-        
-     
-        console.log(todo, 'TOOODO SUBMIT')
-          
-await createTodo({ title: todo }, Cookies);
-props.closeModal();
-
-
-        
+        e.preventDefault();          
+       await createTodo({ title: todo }, Cookies);
+       props.closeModal();        
     }
+
     return (
         <ModalWrapper>
             <form onSubmit={handleSubmit} ref={(node) => (myRef = node) }>

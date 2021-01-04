@@ -2,17 +2,14 @@ import { initialState } from "../context/todosContext";
 
 const todosReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'CREATE_TODO_LOADING':
-        console.log(action);
+    case 'CREATE_TODO_LOADING':      
       return { ...state };
-    case 'CREATE_TODO_SUCCESS':
-        console.log(action.payload);
+    case 'CREATE_TODO_SUCCESS':        
       return {
         ...state,
         todos: [action.payload, ...state.todos]
       };
-    case 'CREATE_TODO_FAILURE':
-      console.log(action);
+    case 'CREATE_TODO_FAILURE':   
       return {
         ...state,
         createTodoError: action.error,
@@ -22,17 +19,13 @@ const todosReducer = (state = initialState, action) => {
       return {
         ...state,
       };
-    case 'FETCH_TODOS_SUCCESS':
-       
-      console.log(action)
-      console.log(state, "C4EST LE STTTTATTTE")
+    case 'FETCH_TODOS_SUCCESS': 
       return {
        
         ...state,
         todos: action.payload,
       };
-    case 'FETCH_TODOS_FAILURE':
-      console.log(action);
+    case 'FETCH_TODOS_FAILURE':   
       return {
         ...state,
         fetchTodosError: action.error,
@@ -46,7 +39,7 @@ const todosReducer = (state = initialState, action) => {
         };
 
     case 'CREATE_TODOITEM__SUCCESS':
-       console.log(action.payload);
+    
        return {
          ...state,
        } 

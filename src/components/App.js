@@ -18,8 +18,7 @@ function App() {
         <Route exact path="/" component={Landing} />
         <Route path="/signup" render={({history}) => (<SignUp signUp={async (user) => {
             const res = await signUp(user);
-            if (res){
-              
+            if (res){              
               history.push('/signin');
             }
            
@@ -27,8 +26,7 @@ function App() {
         } />
 
 <Route path="/signin" render={({history}) => (<SignIn signIn={async (user) => {
-            const res = await signIn(user);
-            console.log(res);
+            const res = await signIn(user);           
             if (res){
               Cookies.set('token', res.data.token);
               history.push('/todos');

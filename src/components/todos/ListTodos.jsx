@@ -8,7 +8,7 @@ import { TodoList } from './Styles';
 import RenderTodos from './RenderTodos';
 
 const ListTodos = () => {
-    const { state, fetchTodos } = useContext(TodosContext);
+    const { fetchTodos } = useContext(TodosContext);
     const [showModal, setShowModal]= useState(false);
     
     useEffect(() => {
