@@ -9,7 +9,7 @@ import {Context as AuthContext } from '../../context/authContext';
 
 
 const NavBar = () => {
-const {state: { user }, setCurrentUser}= useContext(AuthContext);
+const { setCurrentUser}= useContext(AuthContext);
 
 useEffect(() => {
   

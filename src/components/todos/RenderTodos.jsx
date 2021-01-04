@@ -26,6 +26,7 @@ setTodoitem(e.target.value);
 
    } 
    }
+   setShowCreateTodoItem(false);
   } 
 
   
@@ -69,7 +70,7 @@ const res =   await markTodoItemAsDone({
                 <ListTodoItems handleDone={handleDone} todo={todo} />
 
               </ul>
-             {showCreateTodoItem && todoId === todo.id &&<CreateTodoItem  handleChange={handleChange} handleSubmit={handleSubmit}/>}
+             {showCreateTodoItem && todoId === todo.id && <CreateTodoItem  handleChange={handleChange} handleSubmit={handleSubmit}/>}
             </div>
           )
         })}
