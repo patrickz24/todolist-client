@@ -10,6 +10,7 @@ const auth = ( state = initialState, action) => {
                 return {...state, signUpErr: action.payload}; 
 
 case 'SET_CURRENT_USER_SUCCESS':
+   
     return { ...state, user:action.payload};
 
 

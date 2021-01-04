@@ -15,7 +15,7 @@ export const setCurrentUser = (dispatch) => async (Cookies, jwtDecode) => {
 try {
     dispatch({ type: 'SET_CURRENT_USER_LOADING'});
     const payload = jwtDecode(Cookies.get('token'));
-    console.log(payload);
+
   dispatch({ type: 'SET_CURRENT_USER_SUCCESS', payload});
  
 } catch (err) {

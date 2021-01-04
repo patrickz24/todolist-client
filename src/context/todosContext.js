@@ -1,6 +1,6 @@
 import createDataContext from './createDataContext';
 import todosReducer from '../reducers/todos';
-import { createTodo, fetchTodos} from '../actions';
+import { createTodo, fetchTodos, createTodoItem, markTodoItemAsDone, deleteTodo} from '../actions';
 
 
 export const initialState = {
@@ -12,7 +12,7 @@ export const initialState = {
 
 export const { Context, Provider } = createDataContext(
   todosReducer,
-  { createTodo, fetchTodos},
+  { createTodo, fetchTodos, createTodoItem, markTodoItemAsDone, deleteTodo},
   initialState,
 );
 

@@ -1,4 +1,11 @@
 import styled from 'styled-components';
+import { CheckDouble } from '@styled-icons/boxicons-regular/CheckDouble';
+
+export const Tick = styled(CheckDouble)`
+  width: 30px;
+  color: #06A82A;
+  margin-right: -10px;
+`;
 
 export const TodoList = styled.div`
   width: 100%;
@@ -52,14 +59,13 @@ export const TodoList = styled.div`
       padding: 5px 10px;
 
     }
-    .create-task {
+    .create-todoitem {
       border: 1px solid #ccc;
       background-color: #fff;
       margin-top: 1px;
       border-radius: 3px;
       padding: 1px;
       input {
-        width: 95%;
         border: none;
         padding: 5px;
         outline: none;
@@ -68,6 +74,7 @@ export const TodoList = styled.div`
         float: right;
         padding: 5px;
         height: 100%;
+        width: fit-content;
         border: none;
         border-left: 1px solid #ccc;
       }

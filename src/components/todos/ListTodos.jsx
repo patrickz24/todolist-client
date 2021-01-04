@@ -25,6 +25,7 @@ const ListTodos = () => {
     }
 
 
+
     return (
         <Layout>
             <TodoList>
@@ -33,7 +34,7 @@ const ListTodos = () => {
            
             <div className="row">
                 <div className="col-md-12 header text-center mt-3">
-                    <h1>Mes Todos Listes</h1>
+                    <h1>My Todo Lists</h1>
                 </div>
                 </div>
                 <div className="row">

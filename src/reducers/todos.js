@@ -25,16 +25,31 @@ const todosReducer = (state = initialState, action) => {
     case 'FETCH_TODOS_SUCCESS':
        
       console.log(action)
+      console.log(state, "C4EST LE STTTTATTTE")
       return {
        
         ...state,
         todos: action.payload,
       };
     case 'FETCH_TODOS_FAILURE':
+      console.log(action);
       return {
         ...state,
         fetchTodosError: action.error,
       };
+
+    case 'DELETE_TODO_SUCCESS':
+      const { todos } = state;
+      const newTodos = todos.filter((todo) => todo.id !== action.payload);
+      return {
+          ...state, todos: newTodos
+        };
+
+    case 'CREATE_TODOITEM__SUCCESS':
+       console.log(action.payload);
+       return {
+         ...state,
+       } 
 
     default:
       return state;
